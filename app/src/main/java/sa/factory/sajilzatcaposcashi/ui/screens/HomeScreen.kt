@@ -52,7 +52,8 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: 'ESC/POS Thermal Receipt Printer + Barcode Scanner'}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
+                    val defaultPeripheral = "ESC/POS Thermal Receipt Printer + Barcode Scanner"
+                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: defaultPeripheral}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
                     Text(state.telemetry?.liveReading ?: "ESC/POS: 200mm/s | Barcode: 978-3-16-148410-0", fontSize = 11.sp, color = BrandTextSecondary)
                 }
                 Badge(containerColor = BrandPrimary) {
